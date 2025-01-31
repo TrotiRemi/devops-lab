@@ -1,6 +1,6 @@
 name: Sample App Tests
 
-on: 
+on:
   push:
     branches:
       - main
@@ -22,6 +22,10 @@ jobs:
         working-directory: td5/scripts/sample-app
         run: npm install
 
+      - name: Ensure Jest is installed
+        working-directory: td5/scripts/sample-app
+        run: npx jest --version
+
       - name: Run Tests
         working-directory: td5/scripts/sample-app
-        run: npm test
+        run: npx jest --coverage
