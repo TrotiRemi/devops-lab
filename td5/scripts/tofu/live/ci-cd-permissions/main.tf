@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "oidc_provider" {
-  source = "git::https://github.com/TrotiRemi/devops-lab.git//td5/scripts/tofu/modules/github-aws-oidc?ref=opentofu-tests"
+  source = "git::https://github.com/TrotiRemi/devops-lab.git//td5/scripts/tofu/modules/github-aws-oidc"
 }
 
 module "iam_roles" {
