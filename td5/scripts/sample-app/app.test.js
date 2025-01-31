@@ -45,3 +45,4 @@ describe('Test the /add/:a/:b path', () => {
         expect(response.text).toBe('The sum of 2.5 and 3.5 is 6');
     });
 });
+expect(response.text).toBe('DevOps Labs!');
