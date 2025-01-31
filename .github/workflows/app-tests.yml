@@ -20,12 +20,22 @@ jobs:
 
       - name: Install Dependencies
         working-directory: td5/scripts/sample-app
-        run: npm install
+        run: npm ci  # Plus fiable que npm install
 
-      - name: Ensure Jest is installed
+      - name: Debug Jest Installation
         working-directory: td5/scripts/sample-app
-        run: npx jest --version
+        run: |
+          echo "Checking Jest version..."
+          npx jest --version || echo "Jest not found!"
+          ls -la node_modules/.bin
+
+      - name: Fix Jest Permissions
+        working-directory: td5/scripts/sample-app
+        run: chmod +x node_modules/.bin/jest
 
       - name: Run Tests
         working-directory: td5/scripts/sample-app
         run: npx jest --coverage
+
+      - name: Display Directory Structure (Debugging)
+        run: ls -R  # Vérifie que Jest est bien installé et où il se trouve
