@@ -21,5 +21,6 @@ app.get('/add/:a/:b', (req, res) => {
     const sum = a + b;
     res.send(`The sum of ${a} and ${b} is ${sum}`);
 });
-
+// Example 5-3: Update the app response text (td5/scripts/sample-app/app.js)
+res.send('DevOps Labs!');
 module.exports = app;
