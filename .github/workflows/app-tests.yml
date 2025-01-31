@@ -1,0 +1,41 @@
+name: Sample App Tests
+
+on:
+  push:
+    branches:
+      - main
+      - test-workflow
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sample_app_tests:
+    name: "Run Tests Using Jest"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        working-directory: td5/scripts/sample-app
+        run: npm ci  # Plus fiable que npm install
+
+      - name: Debug Jest Installation
+        working-directory: td5/scripts/sample-app
+        run: |
+          echo "Checking Jest version..."
+          npx jest --version || echo "Jest not found!"
+          ls -la node_modules/.bin
+
+      - name: Fix Jest Permissions
+        working-directory: td5/scripts/sample-app
+        run: chmod +x node_modules/.bin/jest
+
+      - name: Run Tests
+        working-directory: td5/scripts/sample-app
+        run: npx jest --coverage
+
+      - name: Display Directory Structure (Debugging)
+        run: ls -R  # Vérifie que Jest est bien installé et où il se trouve
