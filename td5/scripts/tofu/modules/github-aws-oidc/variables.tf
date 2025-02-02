@@ -1,4 +1,4 @@
 variable "provider_url" {
-  description = "The URL the identity provider uses for OIDC"
+  description = "The URL of the OIDC provider"
   type        = string
 }
