@@ -18,7 +18,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v3
         with:
           # TODO: Remplace avec ton IAM Role ARN stocké en secret
-          role-to-assume: arn:aws:iam::111111111111:role/lambda-sample-tests
+          role-to-assume: arn:aws:iam::122610477635:role/lambda-sample-tests
           role-session-name: tests-${{ github.run_number }}-${{ github.actor }}
           aws-region: us-east-2
 
