@@ -3,6 +3,7 @@ on:
   pull_request:                                                             
     branches: ["master"]
     paths: ["ch5/tofu/live/lambda-sample/**"]
+    types: [opened, synchronize, reopened]  # 🔥 Ajout pour s'assurer qu'il se déclenche à chaque PR update
 
 jobs:
   plan:
