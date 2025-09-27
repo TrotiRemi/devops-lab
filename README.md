@@ -1,3 +1,5 @@
 # DevOps Lab
 This is a School work to create a webapp with continuous integration
-Ceci est un devoir d'école où je devais créér une webapp avec une intégration continue 
+Here is the pdf explaining 
+
+[Voir le PDF](./Lab%205_%20Continuous%20Integration%20(CI)%20and%20Continuous%20Delivery%20(CD)%20with%20Kubernetes.pdf)
